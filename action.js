@@ -773,7 +773,7 @@
     }
 
     const util = new presvUtil();
-    browser.runtime.onMessage.addListener((message) => {
+    chrome.runtime.onMessage.addListener((message) => {
 
         let cmd = message.command;
 

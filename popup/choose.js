@@ -2,96 +2,76 @@ function action_handler() {
 
     document.addEventListener("click", (e) => {
 
-        const tabs = browser.tabs;
+        const tabs = chrome.tabs;
         let tid = e.target.id;
 
         switch(tid) {
             case "csscut":
-                browser.tabs.query({active: true, currentWindow: true})
-                    .then((tabs) => {
-                        browser.tabs.sendMessage(tabs[0].id, {
+                    chrome.tabs.query({active: true, currentWindow: true}, (tabs)=>{
+                        chrome.tabs.sendMessage(tabs[0].id, {
                             command: "csscut"
                         });
-                    })
-                    .catch(console.error("error"));
-                break;
+                    });
+                    break;
             case "altcheck":
-                browser.tabs.query({active: true, currentWindow: true})
-                    .then((tabs) => {
-                        browser.tabs.sendMessage(tabs[0].id, {
-                            command: "altcheck"
-                        });
-                    })
-                    .catch(console.error("error"));
+                chrome.tabs.query({active: true, currentWindow: true}, (tabs)=>{
+                    chrome.tabs.sendMessage(tabs[0].id, {
+                        command: "altcheck"
+                    });
+                });
                 break;
             case "targetcheck":
-                browser.tabs.query({active: true, currentWindow: true})
-                    .then((tabs) => {
-                        browser.tabs.sendMessage(tabs[0].id, {
-                            command: "targetcheck"
-                        });
-                    })
-                    .catch(console.error("error"));
+                chrome.tabs.query({active: true, currentWindow: true}, (tabs)=>{
+                    chrome.tabs.sendMessage(tabs[0].id, {
+                        command: "targetcheck"
+                    });
+                });
                 break;
             case "documentlink":
-                browser.tabs.query({active: true, currentWindow: true})
-                    .then((tabs) => {
-                        browser.tabs.sendMessage(tabs[0].id, {
-                            command: "documentlink"
-                        });
-                    })
-                    .catch(console.error("error"));
+                chrome.tabs.query({active: true, currentWindow: true}, (tabs)=>{
+                    chrome.tabs.sendMessage(tabs[0].id, {
+                        command: "documentlink"
+                    });
+                });
                 break;
             case "langcheck":
-                browser.tabs.query({active: true, currentWindow: true})
-                    .then((tabs) => {
-                        browser.tabs.sendMessage(tabs[0].id, {
-                            command: "langcheck"
-                        });
-                    })
-                    .catch(console.error("error"));
+                chrome.tabs.query({active: true, currentWindow: true}, (tabs)=>{
+                    chrome.tabs.sendMessage(tabs[0].id, {
+                        command: "langcheck"
+                    });
+                });
                 break;
             case "label-and-title-check":
-                browser.tabs.query({active: true, currentWindow: true})
-                    .then((tabs) => {
-                        browser.tabs.sendMessage(tabs[0].id, {
-                            command: "label-and-title-check"
-                        });
-                    })
-                    .catch(console.error("error"));
+                chrome.tabs.query({active: true, currentWindow: true}, (tabs)=>{
+                    chrome.tabs.sendMessage(tabs[0].id, {
+                        command: "label-and-title-check"
+                    });
+                });
                 break;
             case "structcheck":
-                browser.tabs.query({active: true, currentWindow: true})
-                    .then((tabs) => {
-                        browser.tabs.sendMessage(tabs[0].id, {
-                            command: "structcheck"
-                        });
-                    })
-                    .catch(console.error("error"));
+                chrome.tabs.query({active: true, currentWindow: true}, (tabs)=>{
+                    chrome.tabs.sendMessage(tabs[0].id, {
+                        command: "structcheck"
+                    });
+                });
                 break;
             case "superfocus":
-                browser.tabs.query({active: true, currentWindow: true})
-                    .then((tabs) => {
-                        browser.tabs.sendMessage(tabs[0].id, {
-                            command: "superfocus"
-                        });
-                    })
-                    .catch(console.error("error"));
+                chrome.tabs.query({active: true, currentWindow: true}, (tabs)=>{
+                    chrome.tabs.sendMessage(tabs[0].id, {
+                        command: "superfocus"
+                    });
+                });
                 break;
             case "ariacheck":
-                    browser.tabs.query({active: true, currentWindow: true})
-                        .then((tabs) => {
-                            browser.tabs.sendMessage(tabs[0].id, {
-                                command: "ariacheck"
-                            });
-                        })
-                        .catch(console.error("error"));
+                chrome.tabs.query({active: true, currentWindow: true}, (tabs)=>{
+                    chrome.tabs.sendMessage(tabs[0].id, {
+                        command: "ariacheck"
+                    });
+                });
                 break;
         }
     });
 
 }
 
-browser.tabs.executeScript({file: "/action.js"})
-    .then(action_handler)
-    .catch(console.error("error!"));
+chrome.tabs.executeScript({file: "/action.js"}, action_handler);
