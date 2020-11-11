@@ -2,7 +2,7 @@
 {
     "manifest_version": 2,
     "name": "chrome-presv-addon",
-    "version": "0.0.1",
+    "version": "0.0.0",
     "description": "this addon is the web accessibility survey support.",
     "icons": {
         "48": "icons/presv-48.png"
