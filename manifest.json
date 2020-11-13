@@ -2,8 +2,8 @@
 {
     "manifest_version": 2,
     "name": "chrome-presv-addon",
-    "version": "0.0.0",
-    "description": "this addon is the web accessibility survey support.",
+    "version": "0.0.2",
+    "description": "ウェブアクセシビリティの規格(JIS X8341-3/WCAG2.0)に対応しているかチェックするための簡易解析ツール",
     "icons": {
         "48": "icons/presv-48.png"
     },
